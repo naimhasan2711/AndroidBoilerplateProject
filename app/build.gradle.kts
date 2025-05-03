@@ -72,6 +72,7 @@ dependencies {
     implementation(libs.okhttp.logging)
     implementation(libs.moshi)
     implementation(libs.moshi.kotlin)
+    implementation(libs.converter.gson)
 
     // Room
     implementation(libs.room.runtime)
