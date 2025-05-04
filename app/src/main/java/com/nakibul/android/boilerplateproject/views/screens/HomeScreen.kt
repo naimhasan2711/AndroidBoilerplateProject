@@ -66,7 +66,7 @@ fun HomeScreen(
                 verticalArrangement = Arrangement.Center
             ) {
                 Spacer(modifier = modifier.height(24.dp))
-                NewsContent(state)
+                NewsContent(state, navController)
             }
         }
     }

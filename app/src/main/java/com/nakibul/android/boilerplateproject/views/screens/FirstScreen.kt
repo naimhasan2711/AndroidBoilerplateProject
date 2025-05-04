@@ -21,9 +21,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.nakibul.android.boilerplateproject.models.Article
 
 @Composable
-fun FirstScreen(modifier: Modifier = Modifier, navController: NavController) {
+fun FirstScreen(modifier: Modifier = Modifier, navController: NavController, article: Article?) {
     val context = LocalContext.current
 
     Box(
@@ -52,7 +53,7 @@ fun FirstScreen(modifier: Modifier = Modifier, navController: NavController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "First Screen",
+                    text = "First Screen\n${article?.title}",
                     textAlign = TextAlign.Center,
                     fontWeight = FontWeight.Bold,
                     fontSize = 32.sp,

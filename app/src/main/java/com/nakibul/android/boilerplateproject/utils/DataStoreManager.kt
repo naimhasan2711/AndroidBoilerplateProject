@@ -41,7 +41,7 @@ class DataStoreManager(private val dataStore: DataStore<Preferences>) {
     }
 
     // Save data
-    fun put(key: Preferences.Key<String>, value: String) {
+    suspend fun put(key: Preferences.Key<String>, value: String) {
         CoroutineScope(Dispatchers.IO).launch {
             dataStore.edit { preferences ->
                 preferences[key] = value

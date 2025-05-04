@@ -13,10 +13,14 @@ import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import com.google.gson.Gson
+import com.nakibul.android.boilerplateproject.navigation.Screen
 import com.nakibul.android.boilerplateproject.viewmodels.NewsState
+import java.net.URLEncoder
 
 @Composable
-fun NewsContent(state: State<NewsState>) {
+fun NewsContent(state: State<NewsState>, navController: NavController) {
     when {
         state.value.isLoading -> {
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -46,7 +50,12 @@ fun NewsContent(state: State<NewsState>) {
                 // Use items with direct list access for better performance
                 items(articles.size) {
                     val article = articles[it]
-                    ArticleItem(article = article)
+                    ArticleItem(article = article, onClick = {
+                        val articleJson = Gson().toJson(article)
+                        val encodedJson = URLEncoder.encode(articleJson, "UTF-8")
+                        navController.navigate("${Screen.First.route}/$encodedJson")
+
+                    })
                     if (it < articles.size - 1) {
                         Divider(
                             modifier = Modifier.padding(horizontal = 16.dp),

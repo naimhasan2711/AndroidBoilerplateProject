@@ -2,11 +2,16 @@ package com.nakibul.android.boilerplateproject.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
+import com.google.gson.Gson
+import com.nakibul.android.boilerplateproject.models.Article
 import com.nakibul.android.boilerplateproject.views.screens.FirstScreen
 import com.nakibul.android.boilerplateproject.views.screens.HomeScreen
 import com.nakibul.android.boilerplateproject.views.screens.SecondScreen
+import java.net.URLDecoder
 
 @Composable
 fun SetUpNavGraph(
@@ -20,9 +25,15 @@ fun SetUpNavGraph(
         }
 
         composable(
-            route = Screen.First.route
-        ) {
-            FirstScreen(navController = navController)
+            route = "${Screen.First.route}/{articleJson}",
+            arguments = listOf(
+                navArgument("articleJson") { type = NavType.StringType }
+            )
+        ) { backStackEntry ->
+            val articleJson = backStackEntry.arguments?.getString("articleJson")
+            val decodedJson = articleJson?.let { URLDecoder.decode(it, "UTF-8") }
+            val article = decodedJson?.let { Gson().fromJson(it, Article::class.java) }
+            FirstScreen(navController = navController, article = article)
         }
 
         composable(

@@ -2,6 +2,7 @@ package com.nakibul.android.boilerplateproject.views.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -27,7 +28,7 @@ import com.nakibul.android.boilerplateproject.ui.theme.Pink401
 import com.nakibul.android.boilerplateproject.utils.formatPublishedAtDate
 
 @Composable
-fun ArticleItem(article: Article) {
+fun ArticleItem(article: Article, onClick: () -> Unit) {
     Row(
         modifier = Modifier
             .background(color = Pink401)
@@ -35,6 +36,7 @@ fun ArticleItem(article: Article) {
             .height(180.dp)
             .padding(8.dp)
             .clip(RoundedCornerShape(10.dp))
+            .clickable { onClick() }
     ) {
         // Placeholder for an image or icon
         // You can use an Image composable here if you have a URL or resource

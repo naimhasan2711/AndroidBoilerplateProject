@@ -1,5 +1,8 @@
 package com.nakibul.android.boilerplateproject.models
 
+import android.os.Parcelable
+
+
 data class Article(
     val author: String,
     val content: String,
