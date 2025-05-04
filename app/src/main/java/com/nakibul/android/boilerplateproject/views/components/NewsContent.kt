@@ -3,7 +3,9 @@ package com.nakibul.android.boilerplateproject.views.components
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,11 +31,30 @@ fun NewsContent(state: NewsState) {
 
         else -> {
             val articles = state.articles ?: emptyList()
-            Text(
-                text = "Total Results: ${articles.size ?: 0}",
-                style = MaterialTheme.typography.titleSmall,
-                modifier = Modifier.padding(bottom = 8.dp)
-            )
+            LazyColumn(
+                modifier = Modifier.fillMaxSize() // Ensure LazyColumn takes available space
+            ) {
+                // Add the "Total Results" Text as an item
+                item {
+                    Text(
+                        text = "Total Results: ${articles.size}",
+                        style = MaterialTheme.typography.titleSmall,
+                        modifier = Modifier.padding(bottom = 8.dp, start = 16.dp, end = 16.dp)
+                    )
+                }
+                // Use items with direct list access for better performance
+                items(articles.size){
+                    val article = articles[it]
+                    ArticleItem(article = article)
+                    if (it < articles.size - 1) {
+                        Divider(
+                            modifier = Modifier.padding(horizontal = 16.dp),
+                            thickness = 1.dp,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.12f)
+                        )
+                    }
+                }
+            }
         }
     }
 }

@@ -4,13 +4,12 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
@@ -37,7 +36,7 @@ fun HomeScreen(
             .fillMaxWidth()
             .fillMaxHeight()
             .background(
-                color = Color.Transparent,
+                color = Color.DarkGray,
             )
     ) {
         Box(
@@ -45,7 +44,7 @@ fun HomeScreen(
                 .fillMaxWidth(1f)
                 .fillMaxHeight(1f)
                 .background(
-                    color = MaterialTheme.colorScheme.onPrimary,
+                    color = Color.Transparent,
                     shape = RoundedCornerShape(5.dp, 5.dp, 5.dp, 5.dp)
                 )
                 .align(Alignment.TopCenter),
@@ -53,11 +52,11 @@ fun HomeScreen(
             Column(
                 modifier = Modifier
                     .padding(16.dp)
-                    .fillMaxWidth()
-                    .verticalScroll(rememberScrollState()),
+                    .fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
+                Spacer(modifier = modifier.height(24.dp))
                 NewsContent(state)
             }
         }

@@ -4,8 +4,6 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nakibul.android.boilerplateproject.data.NewsRepository
-import com.nakibul.android.boilerplateproject.models.Article
-import com.nakibul.android.boilerplateproject.models.NewsResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
