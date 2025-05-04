@@ -1,6 +1,7 @@
 package com.nakibul.android.boilerplateproject.di
 
 import com.nakibul.android.boilerplateproject.data.remote.NewsApiService
+import com.nakibul.android.boilerplateproject.utils.Constant
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -8,6 +9,13 @@ import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
+
+/**
+ * Dependency Injection module for providing Retrofit and API service instances.
+ *
+ * This module is responsible for creating and providing the necessary dependencies
+ * for the application, such as Retrofit and the NewsApiService.
+ */
 
 
 @Module
@@ -18,7 +26,7 @@ object AppModule {
     @Singleton
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://newsapi.org/v2/")
+            .baseUrl(Constant.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

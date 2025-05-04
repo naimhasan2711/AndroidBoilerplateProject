@@ -1,4 +1,4 @@
-package com.nakibul.android.boilerplateproject.data.models
+package com.nakibul.android.boilerplateproject.models
 
 data class NewsResponse(
     val articles: List<Article>,

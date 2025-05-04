@@ -1,4 +1,4 @@
-package com.nakibul.android.boilerplateproject.screens
+package com.nakibul.android.boilerplateproject.views.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun FirstScreen(modifier: Modifier = Modifier, navController: NavController) {
+fun SecondScreen(modifier: Modifier = Modifier, navController: NavController) {
     val context = LocalContext.current
 
     Box(
@@ -52,7 +52,7 @@ fun FirstScreen(modifier: Modifier = Modifier, navController: NavController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "First Screen",
+                    text = "Second Screen",
                     textAlign = TextAlign.Center,
                     fontWeight = FontWeight.Bold,
                     fontSize = 32.sp,

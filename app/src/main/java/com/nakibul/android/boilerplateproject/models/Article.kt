@@ -1,6 +1,4 @@
-package com.nakibul.android.boilerplateproject.data.models
-
-import com.nakibul.android.boilerplateproject.data.models.Source
+package com.nakibul.android.boilerplateproject.models
 
 data class Article(
     val author: String,
