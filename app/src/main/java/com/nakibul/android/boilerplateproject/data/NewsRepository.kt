@@ -15,7 +15,6 @@ import javax.inject.Inject
 class NewsRepository @Inject constructor(
     private val newsApiService: NewsApiService
 ) {
-    private val apiKey = "64ca4704ac1f4fe5b58a0b5cb785ed3a"
     suspend fun getArticles(): List<Article> {
         return try {
             val response = newsApiService.fetchTopHeadlines(country = "us", apiKey = Constant.API_KEY)

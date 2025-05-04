@@ -23,18 +23,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
 import com.nakibul.android.boilerplateproject.models.Article
-import java.time.ZonedDateTime
-import java.time.format.DateTimeFormatter
+import com.nakibul.android.boilerplateproject.ui.theme.Pink401
+import com.nakibul.android.boilerplateproject.utils.formatPublishedAtDate
 
 @Composable
 fun ArticleItem(article: Article) {
     Row(
         modifier = Modifier
-            .background(Color.Black)
+            .background(color = Pink401)
             .fillMaxWidth()
             .height(180.dp)
             .padding(8.dp)
-            .clip(RoundedCornerShape(8.dp))
+            .clip(RoundedCornerShape(10.dp))
     ) {
         // Placeholder for an image or icon
         // You can use an Image composable here if you have a URL or resource
@@ -76,23 +76,11 @@ fun ArticleItem(article: Article) {
                 )
                 Spacer(modifier = Modifier.width(16.dp))
                 Text(
-                    text = formatDate(article.publishedAt) ?: "Unknown",
+                    text = formatPublishedAtDate(article.publishedAt) ?: "Unknown",
                     color = Color.White,
                     style = MaterialTheme.typography.bodySmall
                 )
             }
         }
-
-        // You can add an image or icon here if needed
     }
-
-}
-
-fun formatDate(isoDate: String): String {
-    // Parse the ISO 8601 date
-    val zonedDateTime = ZonedDateTime.parse(isoDate)
-    // Define the output formatter
-    val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-    // Format the date
-    return zonedDateTime.format(formatter)
 }
