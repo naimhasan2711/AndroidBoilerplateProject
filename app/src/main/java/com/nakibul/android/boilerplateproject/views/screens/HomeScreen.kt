@@ -20,8 +20,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.nakibul.android.boilerplateproject.ui.theme.Pink40
 import com.nakibul.android.boilerplateproject.ui.theme.Purple40
+import com.nakibul.android.boilerplateproject.utils.DataStoreManager
 import com.nakibul.android.boilerplateproject.viewmodels.NewsViewModel
 import com.nakibul.android.boilerplateproject.views.components.NewsContent
 
@@ -33,6 +33,8 @@ fun HomeScreen(
 ) {
     val context = LocalContext.current
     val state = viewModel.state.collectAsState()
+    val dataStoreManager = DataStoreManager.getInstance(context)
+
     LaunchedEffect(Unit) {
         viewModel.fetchNews()
     }

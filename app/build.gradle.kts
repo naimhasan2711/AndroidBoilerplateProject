@@ -96,4 +96,7 @@ dependencies {
     // Timber
     implementation(libs.timber)
 
+    //datastore
+    implementation(libs.androidx.datastore.preferences)
+
 }
