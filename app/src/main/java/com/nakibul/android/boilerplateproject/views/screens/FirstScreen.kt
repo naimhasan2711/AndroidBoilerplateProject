@@ -53,7 +53,7 @@ fun FirstScreen(modifier: Modifier = Modifier, navController: NavController, art
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "First Screen\n${article?.title}",
+                    text = "First Screen\n\n${article?.content}",
                     textAlign = TextAlign.Center,
                     fontWeight = FontWeight.Bold,
                     fontSize = 32.sp,

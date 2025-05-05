@@ -5,12 +5,9 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 /**
- * Created by Nakibul Islam on 10/10/2023.
- * Email:
- *
- *
- *
-*/
+ * Created by Nakibul Hassan on 05/05/2025.
+ * Email: nakibhasan2711@gmail.com
+ */
 
 interface NewsApiService {
     @GET("top-headlines")
