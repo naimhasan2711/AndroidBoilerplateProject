@@ -9,7 +9,6 @@ import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -20,22 +19,22 @@ import com.nakibul.android.boilerplateproject.viewmodels.NewsState
 import java.net.URLEncoder
 
 @Composable
-fun NewsContent(state: State<NewsState>, navController: NavController) {
+fun NewsContent(state: NewsState, navController: NavController) {
     when {
-        state.value.isLoading -> {
+        state.isLoading -> {
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 CircularProgressIndicator()
             }
         }
 
-        state.value.error != null -> {
+        state.error != null -> {
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                Text(text = "Error: ${state.value.error}", color = MaterialTheme.colorScheme.error)
+                Text(text = "Error: ${state.error}", color = MaterialTheme.colorScheme.error)
             }
         }
 
         else -> {
-            val articles = state.value.articles ?: emptyList()
+            val articles = state.articlesLocal ?: emptyList()
             LazyColumn(
                 modifier = Modifier.fillMaxSize() // Ensure LazyColumn takes available space
             ) {

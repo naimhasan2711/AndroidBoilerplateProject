@@ -1,10 +1,15 @@
 package com.nakibul.android.boilerplateproject.di
 
+import android.content.Context
+import androidx.room.Room
+import com.nakibul.android.boilerplateproject.data.local.AppDatabase
+import com.nakibul.android.boilerplateproject.data.local.ArticleDao
 import com.nakibul.android.boilerplateproject.data.remote.NewsApiService
 import com.nakibul.android.boilerplateproject.utils.Constant
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -59,5 +64,21 @@ object AppModule {
     @Singleton
     fun provideNewsApiService(retrofit: Retrofit): NewsApiService {
         return retrofit.create(NewsApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
+        return Room.databaseBuilder(
+            context,
+            AppDatabase::class.java,
+            "app_database"
+        ).build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideArticleDao(database: AppDatabase): ArticleDao {
+        return database.articleDao()
     }
 }

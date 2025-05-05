@@ -23,12 +23,12 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
-import com.nakibul.android.boilerplateproject.models.Article
+import com.nakibul.android.boilerplateproject.data.local.ArticleEntity
 import com.nakibul.android.boilerplateproject.ui.theme.Pink401
 import com.nakibul.android.boilerplateproject.utils.formatPublishedAtDate
 
 @Composable
-fun ArticleItem(article: Article, onClick: () -> Unit) {
+fun ArticleItem(article: ArticleEntity, onClick: () -> Unit) {
     Row(
         modifier = Modifier
             .background(color = Pink401)
@@ -72,13 +72,13 @@ fun ArticleItem(article: Article, onClick: () -> Unit) {
             )
             Row(modifier = Modifier) {
                 Text(
-                    text = article.source.name ?: "Unknown",
+                    text = article.author ?: "Unknown",
                     color = Color.White,
                     style = MaterialTheme.typography.bodySmall
                 )
                 Spacer(modifier = Modifier.width(16.dp))
                 Text(
-                    text = formatPublishedAtDate(article.publishedAt) ?: "Unknown",
+                    text = formatPublishedAtDate(article.publishedAt.toString()) ?: "Unknown",
                     color = Color.White,
                     style = MaterialTheme.typography.bodySmall
                 )

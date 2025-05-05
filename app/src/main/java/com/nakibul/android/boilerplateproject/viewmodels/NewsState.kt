@@ -1,5 +1,6 @@
 package com.nakibul.android.boilerplateproject.viewmodels
 
+import com.nakibul.android.boilerplateproject.data.local.ArticleEntity
 import com.nakibul.android.boilerplateproject.models.Article
 import com.nakibul.android.boilerplateproject.models.NewsResponse
 
@@ -15,6 +16,7 @@ import com.nakibul.android.boilerplateproject.models.NewsResponse
 data class NewsState(
     val newsResponse: NewsResponse? = null,
     val articles: List<Article> = emptyList(),
+    val articlesLocal: List<ArticleEntity> = emptyList(),
     val isLoading: Boolean = false,
     val error: String? = null
 )

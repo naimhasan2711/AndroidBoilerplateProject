@@ -32,11 +32,12 @@ fun HomeScreen(
     viewModel: NewsViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
-    val state = viewModel.state.collectAsState()
+    val state = viewModel.state.collectAsState().value
     val dataStoreManager = DataStoreManager.getInstance(context)
 
+    // Trigger fetchNews on composition
     LaunchedEffect(Unit) {
-        viewModel.fetchNews()
+        viewModel.fetchNewsFromDB()
     }
 
     Box(
