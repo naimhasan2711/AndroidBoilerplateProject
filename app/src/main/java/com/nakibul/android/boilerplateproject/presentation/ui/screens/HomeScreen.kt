@@ -1,4 +1,4 @@
-package com.nakibul.android.boilerplateproject.views.screens
+package com.nakibul.android.boilerplateproject.presentation.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -22,8 +22,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.nakibul.android.boilerplateproject.ui.theme.Purple40
 import com.nakibul.android.boilerplateproject.utils.DataStoreManager
-import com.nakibul.android.boilerplateproject.viewmodels.NewsViewModel
-import com.nakibul.android.boilerplateproject.views.components.NewsContent
+import com.nakibul.android.boilerplateproject.presentation.viewmodels.NewsViewModel
+import com.nakibul.android.boilerplateproject.presentation.ui.components.NewsContent
 
 @Composable
 fun HomeScreen(

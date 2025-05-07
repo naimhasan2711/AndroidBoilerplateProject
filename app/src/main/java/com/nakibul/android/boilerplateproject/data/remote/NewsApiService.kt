@@ -1,6 +1,6 @@
 package com.nakibul.android.boilerplateproject.data.remote
 
-import com.nakibul.android.boilerplateproject.models.NewsResponse
+import com.nakibul.android.boilerplateproject.domain.model.NewsResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

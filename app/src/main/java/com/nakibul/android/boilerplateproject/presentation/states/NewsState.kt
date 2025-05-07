@@ -1,8 +1,8 @@
-package com.nakibul.android.boilerplateproject.viewmodels
+package com.nakibul.android.boilerplateproject.presentation.states
 
 import com.nakibul.android.boilerplateproject.data.local.ArticleEntity
-import com.nakibul.android.boilerplateproject.models.Article
-import com.nakibul.android.boilerplateproject.models.NewsResponse
+import com.nakibul.android.boilerplateproject.domain.model.Article
+import com.nakibul.android.boilerplateproject.domain.model.NewsResponse
 
 
 /**

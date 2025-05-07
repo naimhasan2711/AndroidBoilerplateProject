@@ -1,11 +1,12 @@
-package com.nakibul.android.boilerplateproject.viewmodels
+package com.nakibul.android.boilerplateproject.presentation.viewmodels
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.nakibul.android.boilerplateproject.data.NewsRepository
+import com.nakibul.android.boilerplateproject.data.repository.NewsRepository
 import com.nakibul.android.boilerplateproject.data.local.ArticleEntity
-import com.nakibul.android.boilerplateproject.models.Article
+import com.nakibul.android.boilerplateproject.domain.model.Article
+import com.nakibul.android.boilerplateproject.presentation.states.NewsState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

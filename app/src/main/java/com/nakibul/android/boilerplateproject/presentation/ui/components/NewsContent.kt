@@ -1,4 +1,4 @@
-package com.nakibul.android.boilerplateproject.views.components
+package com.nakibul.android.boilerplateproject.presentation.ui.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.google.gson.Gson
 import com.nakibul.android.boilerplateproject.navigation.Screen
-import com.nakibul.android.boilerplateproject.viewmodels.NewsState
+import com.nakibul.android.boilerplateproject.presentation.states.NewsState
 import java.net.URLEncoder
 
 @Composable

@@ -1,4 +1,4 @@
-package com.nakibul.android.boilerplateproject.views.components
+package com.nakibul.android.boilerplateproject.presentation.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

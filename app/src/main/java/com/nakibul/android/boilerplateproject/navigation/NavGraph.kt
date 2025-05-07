@@ -7,10 +7,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.google.gson.Gson
-import com.nakibul.android.boilerplateproject.models.Article
-import com.nakibul.android.boilerplateproject.views.screens.FirstScreen
-import com.nakibul.android.boilerplateproject.views.screens.HomeScreen
-import com.nakibul.android.boilerplateproject.views.screens.SecondScreen
+import com.nakibul.android.boilerplateproject.domain.model.Article
+import com.nakibul.android.boilerplateproject.presentation.ui.screens.FirstScreen
+import com.nakibul.android.boilerplateproject.presentation.ui.screens.HomeScreen
+import com.nakibul.android.boilerplateproject.presentation.ui.screens.SecondScreen
 import java.net.URLDecoder
 
 @Composable

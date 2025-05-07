@@ -1,9 +1,9 @@
-package com.nakibul.android.boilerplateproject.data
+package com.nakibul.android.boilerplateproject.data.repository
 
 import com.nakibul.android.boilerplateproject.data.local.ArticleDao
 import com.nakibul.android.boilerplateproject.data.local.ArticleEntity
 import com.nakibul.android.boilerplateproject.data.remote.NewsApiService
-import com.nakibul.android.boilerplateproject.models.Article
+import com.nakibul.android.boilerplateproject.domain.model.Article
 import com.nakibul.android.boilerplateproject.utils.Constant
 import javax.inject.Inject
 

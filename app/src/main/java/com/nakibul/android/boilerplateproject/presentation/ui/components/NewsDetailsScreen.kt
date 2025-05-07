@@ -1,4 +1,4 @@
-package com.nakibul.android.boilerplateproject.views.components
+package com.nakibul.android.boilerplateproject.presentation.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -24,7 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
-import com.nakibul.android.boilerplateproject.models.Article
+import com.nakibul.android.boilerplateproject.domain.model.Article
 import com.nakibul.android.boilerplateproject.ui.theme.Pink401
 import com.nakibul.android.boilerplateproject.utils.formatPublishedAtDate
 

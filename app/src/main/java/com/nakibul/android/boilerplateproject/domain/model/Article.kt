@@ -1,4 +1,4 @@
-package com.nakibul.android.boilerplateproject.models
+package com.nakibul.android.boilerplateproject.domain.model
 
 data class Article(
     val author: String,
